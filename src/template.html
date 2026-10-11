@@ -7,7 +7,9 @@
 <meta name="description" content="Impartial advice, supply, installation and support for two-way radio systems. Motorola, Kenwood, Hytera, Icom and more. Based in Burnham-On-Crouch, shipping across the UK.">
 <meta name="theme-color" content="#050608">
 <link rel="canonical" href="https://www.pttsolutions.co.uk/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23050608'/%3E%3Cg fill='%23cfb57f'%3E%3Crect x='5' y='6' width='2.4' height='20'/%3E%3Crect x='10' y='6' width='2.4' height='20'/%3E%3Crect x='15' y='8' width='2.4' height='16'/%3E%3Crect x='20' y='10' width='2.4' height='12'/%3E%3Crect x='25' y='13' width='2.4' height='6'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="{{IMG:favicon-32}}">
+<link rel="icon" type="image/png" sizes="64x64" href="{{IMG:favicon-64}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{IMG:apple-touch-icon}}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PTT Solutions Ltd">
 <meta property="og:title" content="PTT Solutions | Digital Communication Equipment in the UK">
@@ -68,10 +70,9 @@ h1,h2,h3{font-weight:300;letter-spacing:-.01em;margin:0}
 .nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
 .nav.solid{background:rgba(5,6,8,.72);backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);border-color:var(--line)}
 .nav .bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
-.logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-.logo svg{height:34px;width:auto}
-.logo span{font-weight:200;letter-spacing:.34em;font-size:.95rem;text-transform:uppercase;white-space:nowrap}
-.logo span b{font-weight:600}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{height:54px;width:auto}
+footer .logo img{height:64px}
 .links{display:flex;align-items:center;gap:30px}
 .links a:not(.btn){text-decoration:none;font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:#cdd2da;transition:color .2s}
 .links a:not(.btn):hover{color:var(--gold-2)}
@@ -306,7 +307,6 @@ footer ul{padding:0;margin:0}
   .links.open{display:flex}
   .links a:not(.btn){padding:16px 0;border-bottom:1px solid var(--line);font-size:.84rem}
   .links .btn{margin-top:18px}
-  .logo span{font-size:.8rem;letter-spacing:.26em}
   section.block{padding:84px 0}
   .tools,.tools input,.tools select{width:100%}
   .callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:90;padding-bottom:env(safe-area-inset-bottom);background:var(--black);border-top:1px solid var(--line)}
@@ -317,7 +317,6 @@ footer ul{padding:0;margin:0}
 @media (max-width:620px){
   .products,.two{grid-template-columns:1fr}
   .facts .wrap{grid-template-columns:1fr 1fr}
-  .logo span{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -330,10 +329,7 @@ footer ul{padding:0;margin:0}
 
 <header class="nav" id="nav">
   <div class="wrap bar">
-    <a class="logo" href="#top" aria-label="PTT Solutions home">
-      <svg viewBox="0 0 34 34" aria-hidden="true"><g fill="#f5f5f7"><rect x="2" y="3" width="2.4" height="28"/><rect x="7" y="3" width="2.4" height="28" opacity=".92"/><rect x="12" y="4.5" width="2.4" height="25" opacity=".84"/><rect x="17" y="7" width="2.4" height="20" opacity=".7"/><rect x="22" y="10" width="2.4" height="14" opacity=".55"/><rect x="27" y="13" width="2.4" height="8" opacity=".4"/></g></svg>
-      <span><b>PTT</b> Solutions</span>
-    </a>
+    <a class="logo" href="#top" aria-label="PTT Solutions home"><img src="{{IMG:logo}}" alt="PTT Solutions" width="160" height="54"></a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
     <nav class="links" id="links" aria-label="Main">
       <a href="#services">Services</a>
@@ -540,7 +536,7 @@ footer ul{padding:0;margin:0}
   <div class="wrap">
     <div class="fcols">
       <div>
-        <a class="logo" href="#top" aria-label="Back to top"><svg viewBox="0 0 34 34" aria-hidden="true"><g fill="#f5f5f7"><rect x="2" y="3" width="2.4" height="28"/><rect x="7" y="3" width="2.4" height="28" opacity=".92"/><rect x="12" y="4.5" width="2.4" height="25" opacity=".84"/><rect x="17" y="7" width="2.4" height="20" opacity=".7"/><rect x="22" y="10" width="2.4" height="14" opacity=".55"/><rect x="27" y="13" width="2.4" height="8" opacity=".4"/></g></svg><span style="color:#f5f5f7"><b>PTT</b> Solutions</span></a>
+        <a class="logo" href="#top" aria-label="Back to top"><img src="{{IMG:logo}}" alt="PTT Solutions" width="160" height="54"></a>
         <p style="margin:18px 0 0;max-width:22em">Digital communication to keep you connected.</p>
       </div>
       <div><h4>Explore</h4><ul><li><a href="#services">Services</a></li><li><a href="#shop">Shop</a></li><li><a href="#sectors">Sectors</a></li><li><a href="#contact">Contact</a></li></ul></div>

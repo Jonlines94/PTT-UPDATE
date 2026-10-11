@@ -10,7 +10,7 @@ Open `index.html` in a browser, or host it as-is (GitHub Pages, any web server).
 | --- | --- |
 | `index.html` | The finished, built site. |
 | `src/template.html` | Editable source (images appear as `{{IMG:name}}` placeholders). |
-| `assets/images/` | The original site's photos (converted from AVIF to JPEG) and the original logo. |
+| `assets/images/` | The original site's photos (converted from AVIF to JPEG), the original logo, and the favicon files. |
 | `build.py` | Rebuilds `index.html` from the template and images. |
 
 To change anything: edit `src/template.html` (or swap a photo in `assets/images/` keeping the same file name), then run `python3 build.py`.
@@ -28,4 +28,4 @@ To change anything: edit `src/template.html` (or swap a photo in `assets/images/
 - **Shop:** a selection of products with enquiry buttons; real checkout needs a shop platform. Prices are exclusive of VAT, shipping £8.95 per order, as on the original site.
 - **Fonts:** Raleway loads from Google Fonts when online and falls back to a system font otherwise.
 - **Photos:** most original photos are small thumbnails, so they are shown at modest sizes. Higher-resolution versions would look sharper.
-- **Logo:** the header uses a redrawn vector logo mark; the original (181 px wide) is kept in `assets/images/original-logo.png`.
+- **Logo and favicon:** the header and footer use your original logo (white-on-transparent version in `assets/images/logo.png`, made from the 181 px original in `original-logo.png`). A larger original logo file would look sharper. The favicon files (`favicon-32.png`, `favicon-64.png`, `apple-touch-icon.png`, `favicon.png`) are built from the bars icon in that logo, because the original favicon file wasn't in the supplied zip. To use the real one, replace those files (keep the names) and run `python3 build.py`.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build index.html: inline every {{IMG:name}} from assets/images/<name>.jpg as a data URI.
+"""Build index.html: inline every {{IMG:name}} from assets/images/<name>.jpg or .png as a data URI.
 
 Usage:  python3 build.py
 Edit src/template.html (and the images in assets/images), then run this to regenerate index.html.
@@ -11,10 +11,11 @@ src = (root / "src" / "template.html").read_text(encoding="utf-8")
 
 def embed(match):
     name = match.group(1)
-    path = root / "assets" / "images" / f"{name}.jpg"
-    if not path.exists():
-        sys.exit(f"Missing image: {path}")
-    return "data:image/jpeg;base64," + base64.b64encode(path.read_bytes()).decode()
+    for ext, mime in (("jpg", "image/jpeg"), ("png", "image/png")):
+        path = root / "assets" / "images" / f"{name}.{ext}"
+        if path.exists():
+            return f"data:{mime};base64," + base64.b64encode(path.read_bytes()).decode()
+    sys.exit(f"Missing image: assets/images/{name}.jpg or .png")
 
 out = re.sub(r"\{\{IMG:([a-z0-9-]+)\}\}", embed, src)
 if "{{" in out:
