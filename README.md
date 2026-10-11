@@ -10,6 +10,7 @@ Open `index.html` in a browser, or host it as-is (GitHub Pages, any web server).
 | --- | --- |
 | `index.html` | The finished, built site. |
 | `src/template.html` | Editable source (images appear as `{{IMG:name}}` placeholders). |
+| `data/products.json` | The shop's product range (name, price, stock, photo link, description). |
 | `assets/images/` | The original site's photos (converted from AVIF to JPEG), the original logo, and the favicon files. |
 | `build.py` | Rebuilds `index.html` from the template and images. |
 
@@ -25,7 +26,7 @@ To change anything: edit `src/template.html` (or swap a photo in `assets/images/
 
 ## Before going live
 - **Forms:** the enquiry forms open the visitor's email app (`mailto:`). Connect a form service or backend for real submissions.
-- **Shop:** a selection of products with enquiry buttons; real checkout needs a shop platform. Prices are exclusive of VAT, shipping £8.95 per order, as on the original site.
+- **Shop:** shows the real range from the live shop: 27 products (pages 1 to 3 of the shop) with their actual names, prices (ex VAT), stock status, descriptions and product photos. The data is in `data/products.json`; edit it and run `python3 build.py` to change the shop. Product photos load straight from the live site's image host, and each card falls back to an icon if a photo can't load. "Details" links to the live product page, and "Enquire / order" emails the business. The live shop has two more pages of products (page 4 and 5) that could not be retrieved yet, so those are not included. Real checkout needs a shop platform. Prices exclude VAT; shipping is £8.95 per order, as on the live site.
 - **Fonts:** Raleway loads from Google Fonts when online and falls back to a system font otherwise.
 - **Photos:** most original photos are small thumbnails, so they are shown at modest sizes. Higher-resolution versions would look sharper.
 - **Logo and favicon:** the header and footer use your original logo (white-on-transparent version in `assets/images/logo.png`, made from the 181 px original in `original-logo.png`). A larger original logo file would look sharper. The favicon files (`favicon-32.png`, `favicon-64.png`, `apple-touch-icon.png`, `favicon.png`) are built from the bars icon in that logo, because the original favicon file wasn't in the supplied zip. To use the real one, replace those files (keep the names) and run `python3 build.py`.
